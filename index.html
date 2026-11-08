@@ -181,15 +181,21 @@
             margin-bottom: 1.25rem;
         }
         
+        .btn-group {
+            display: flex;
+            gap: 0.5rem;
+        }
+
         .btn {
+            flex: 1;
             display: block;
             background-color: transparent;
             color: var(--accent);
             border: 1px solid var(--accent);
-            padding: 0.5rem;
+            padding: 0.5rem 0.2rem;
             border-radius: 4px;
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 600;
             text-align: center;
             transition: background-color 0.2s, color 0.2s;
@@ -257,7 +263,7 @@
             <h2 class="lang-pt">Vitrine Literária (Portfólio Completo)</h2>
             <div class="books-grid">
                 
-                <!-- 1. The Third Door (COM CAPA REAL) -->
+                <!-- 1. The Third Door / A Terceira Porta -->
                 <div class="book-card">
                     <img src="a_terceira_porta.png" alt="The Third Door" class="book-cover-img">
                     <div class="book-info">
@@ -267,7 +273,10 @@
                             <p class="lang-en">An unrelenting audit of the post-mortem transition and administrative filters.</p>
                             <p class="lang-pt">Uma auditoria implacável sobre a transição pós-morte e filtros administrativos.</p>
                         </div>
-                        <a href="https://amazon.com" target="_blank" class="btn">Amazon KDP</a>
+                        <div class="btn-group">
+                            <a href="https://a.co/d/0415Naof" target="_blank" class="btn">Amazon EN</a>
+                            <a href="https://a.co/d/0bSjJve5" target="_blank" class="btn">Amazon PT</a>
+                        </div>
                     </div>
                 </div>
 
@@ -280,159 +289,3 @@
                             <h3>Multiverse: The Source Frequency</h3>
                             <p class="lang-en">Deep explorations into the fundamental frequencies of reality.</p>
                             <p class="lang-pt">Explorações profundas nas frequências fundamentais da realidade.</p>
-                        </div>
-                        <a href="https://amazon.com" target="_blank" class="btn">Amazon KDP</a>
-                    </div>
-                </div>
-
-                <!-- 3. Caos Real -->
-                <div class="book-card">
-                    <div class="book-cover-placeholder">Caos Real: O Colapso da Ordem</div>
-                    <div class="book-info">
-                        <div>
-                            <div class="book-category">Dystopia / Sci-Fi</div>
-                            <h3>Caos Real: O Colapso da Ordem</h3>
-                            <p class="lang-en">Systemic collapse and speculative dystopias. Access the exclusive landing page.</p>
-                            <p class="lang-pt">O colapso sistêmico e distopias especulativas. Acesse a landing page exclusiva.</p>
-                        </div>
-                        <a href="./caosreal/" class="btn">Landing Page</a>
-                    </div>
-                </div>
-
-                <!-- 4. OS11 -->
-                <div class="book-card">
-                    <div class="book-cover-placeholder">OS11</div>
-                    <div class="book-info">
-                        <div>
-                            <div class="book-category">Hard Sci-Fi</div>
-                            <h3>OS11</h3>
-                            <p class="lang-en">The science they erased and the only key that can save us.</p>
-                            <p class="lang-pt">A ciência que eles apagaram e a única chave que pode nos salvar.</p>
-                        </div>
-                        <a href="./os11-landing/" class="btn">Landing Page</a>
-                    </div>
-                </div>
-
-                <!-- 5. The Only Route -->
-                <div class="book-card">
-                    <div class="book-cover-placeholder">The Only Route: Tomorrow's Choice</div>
-                    <div class="book-info">
-                        <div>
-                            <div class="book-category">Science Fiction</div>
-                            <h3>The Only Route: Tomorrow's Choice</h3>
-                            <p class="lang-en">Critical decisions within restricted technological horizons.</p>
-                            <p class="lang-pt">Decisões críticas em horizontes tecnológicos restritos.</p>
-                        </div>
-                        <a href="https://amazon.com" target="_blank" class="btn">Amazon KDP</a>
-                    </div>
-                </div>
-
-                <!-- 6. Ferro e Osso -->
-                <div class="book-card">
-                    <div class="book-cover-placeholder">Ferro e Osso</div>
-                    <div class="book-info">
-                        <div>
-                            <div class="book-category">Chronicles & Essays</div>
-                            <h3>Ferro e Osso</h3>
-                            <p class="lang-en">Unfiltered chronicles on reality, pragmatism, and human nature.</p>
-                            <p class="lang-pt">Crônicas sem anestesia sobre a realidade e pragmatismo.</p>
-                        </div>
-                        <a href="https://amazon.com" target="_blank" class="btn">Amazon KDP</a>
-                    </div>
-                </div>
-
-                <!-- 7. The Double-Slit (COM CAPA REAL) -->
-                <div class="book-card">
-                    <img src="a_dupla_fenda.png" alt="The Double-Slit" class="book-cover-img">
-                    <div class="book-info">
-                        <div>
-                            <div class="book-category">Hard Sci-Fi</div>
-                            <h3>The Double-Slit / A Dupla Fenda</h3>
-                            <p class="lang-en">Quantum mechanics, observers, and cracks in perception.</p>
-                            <p class="lang-pt">Mecânica quântica, observadores e fendas na percepção.</p>
-                        </div>
-                        <a href="https://amazon.com" target="_blank" class="btn">Amazon KDP</a>
-                    </div>
-                </div>
-
-                <!-- 8. The Ego Hurts -->
-                <div class="book-card">
-                    <div class="book-cover-placeholder">The Ego Hurts / O Eu Doeu</div>
-                    <div class="book-info">
-                        <div>
-                            <div class="book-category">Philosophy & Essay</div>
-                            <h3>The Ego Hurts / O Eu Doeu</h3>
-                            <p class="lang-en">A surgical analysis of ego attachments and self-perception.</p>
-                            <p class="lang-pt">Uma análise cirúrgica sobre as amarras do ego e a percepção de si.</p>
-                        </div>
-                        <a href="https://amazon.com" target="_blank" class="btn">Amazon KDP</a>
-                    </div>
-                </div>
-
-                <!-- 9. The Object World -->
-                <div class="book-card">
-                    <div class="book-cover-placeholder">The Object World / O Mundo Objeto</div>
-                    <div class="book-info">
-                        <div>
-                            <div class="book-category">Science Fiction</div>
-                            <h3>The Object World / O Mundo Objeto</h3>
-                            <p class="lang-en">When the objectification of consciousness shapes a new world.</p>
-                            <p class="lang-pt">Quando a objetificação da consciência molda as regras de um novo mundo.</p>
-                        </div>
-                        <a href="https://amazon.com" target="_blank" class="btn">Amazon KDP</a>
-                    </div>
-                </div>
-
-                <!-- 10. Além do Formigueiro -->
-                <div class="book-card">
-                    <div class="book-cover-placeholder">Além do Formigueiro</div>
-                    <div class="book-info">
-                        <div>
-                            <div class="book-category">Essays & Poetry</div>
-                            <h3>Além do Formigueiro</h3>
-                            <p class="lang-en">The poet's truths facing urban haste and collective patterns.</p>
-                            <p class="lang-pt">As verdades do poeta diante da pressa urbana.</p>
-                        </div>
-                        <a href="https://loja.uiclap.com/titulo/ua198816" target="_blank" class="btn">UICLAP</a>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <footer>
-            <p>&copy; 2026 Mauricio Custarella. <span class="lang-en">All rights reserved. | Hosted via</span><span class="lang-pt">Todos os direitos reservados. | Hospedado via</span> <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
-        </footer>
-    </div>
-
-    <script>
-        let currentLang = 'en';
-
-        function toggleLanguage() {
-            const enElements = document.querySelectorAll('.lang-en');
-            const ptElements = document.querySelectorAll('.lang-pt');
-            const toggleBtn = document.getElementById('langToggle');
-
-            if (currentLang === 'en') {
-                enElements.forEach(el => el.style.display = 'none');
-                ptElements.forEach(el => el.style.display = 'block');
-                toggleBtn.innerText = 'Switch to English';
-                document.documentElement.lang = 'pt-BR';
-                currentLang = 'pt';
-            } else {
-                ptElements.forEach(el => el.style.display = 'none');
-                enElements.forEach(el => el.style.display = 'block');
-                toggleBtn.innerText = 'PT-BR / English';
-                document.documentElement.lang = 'en';
-                currentLang = 'en';
-            }
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
-            document.querySelectorAll('.lang-pt').forEach(el => el.style.display = 'none');
-            document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'block');
-        });
-    </script>
-
-</body>
-</html>
