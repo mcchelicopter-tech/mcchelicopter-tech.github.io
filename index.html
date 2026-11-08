@@ -144,6 +144,13 @@
             border-bottom: 1px solid var(--border);
         }
 
+        .book-cover-img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border);
+        }
+
         .book-info {
             padding: 1.25rem;
             display: flex;
@@ -206,7 +213,6 @@
             text-decoration: none;
         }
 
-        /* Classes de controle de idioma */
         .lang-pt { display: none; }
         .lang-en { display: block; }
     </style>
@@ -214,7 +220,6 @@
 <body>
 
     <div class="container">
-        <!-- Botão de Alternância de Idioma -->
         <div class="lang-switch">
             <button class="lang-btn" id="langToggle" onclick="toggleLanguage()">PT-BR / English</button>
         </div>
@@ -252,9 +257,9 @@
             <h2 class="lang-pt">Vitrine Literária (Portfólio Completo)</h2>
             <div class="books-grid">
                 
-                <!-- 1. The Third Door -->
+                <!-- 1. The Third Door (COM CAPA REAL) -->
                 <div class="book-card">
-                    <div class="book-cover-placeholder">The Third Door / A Terceira Porta</div>
+                    <img src="a_terceira_porta.png" alt="The Third Door" class="book-cover-img">
                     <div class="book-info">
                         <div>
                             <div class="book-category">Hard Sci-Fi / Consciousness</div>
@@ -290,7 +295,7 @@
                             <p class="lang-en">Systemic collapse and speculative dystopias. Access the exclusive landing page.</p>
                             <p class="lang-pt">O colapso sistêmico e distopias especulativas. Acesse a landing page exclusiva.</p>
                         </div>
-                        <a href="./caosreal/" class="btn"><span class="lang-en">Landing Page</span><span class="lang-pt">Landing Page</span></a>
+                        <a href="./caosreal/" class="btn">Landing Page</a>
                     </div>
                 </div>
 
@@ -304,7 +309,7 @@
                             <p class="lang-en">The science they erased and the only key that can save us.</p>
                             <p class="lang-pt">A ciência que eles apagaram e a única chave que pode nos salvar.</p>
                         </div>
-                        <a href="./os11-landing/" class="btn"><span class="lang-en">Landing Page</span><span class="lang-pt">Landing Page</span></a>
+                        <a href="./os11-landing/" class="btn">Landing Page</a>
                     </div>
                 </div>
 
@@ -336,9 +341,9 @@
                     </div>
                 </div>
 
-                <!-- 7. The Double-Slit -->
+                <!-- 7. The Double-Slit (COM CAPA REAL) -->
                 <div class="book-card">
-                    <div class="book-cover-placeholder">The Double-Slit / A Dupla Fenda</div>
+                    <img src="a_dupla_fenda.png" alt="The Double-Slit" class="book-cover-img">
                     <div class="book-info">
                         <div>
                             <div class="book-category">Hard Sci-Fi</div>
@@ -423,7 +428,6 @@
             }
         }
 
-        // Inicializa mostrando apenas o Inglês
         document.addEventListener("DOMContentLoaded", () => {
             document.querySelectorAll('.lang-pt').forEach(el => el.style.display = 'none');
             document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'block');
