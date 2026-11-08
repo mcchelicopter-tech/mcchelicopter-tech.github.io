@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mauricio Custarella | Escritor & Pesquisador</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-primary: #f0f6fc;
+            --text-secondary: #8b949e;
+            --accent: #58a6ff;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 3rem 0 2rem 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 3rem;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+        
+        header p.tagline {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 650px;
+            margin: 0 auto;
+        }
+        
+        section {
+            margin-bottom: 3rem;
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5px;
+        }
+        
+        .bio-text {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 1.5rem;
+            transition: transform 0.2s, border-color 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent);
+        }
+        
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+        
+        .card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-align: center;
+            transition: background-color 0.2s, color 0.2s;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent);
+            color: var(--bg-color);
+        }
+        
+        footer {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+        
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Mauricio Custarella</h1>
+            <p class="tagline">Escritor de Hard Science Fiction, Ensaísta Filosófico e Pesquisador da Consciência.</p>
+        </header>
+
+        <section>
+            <h2>Sobre o Autor</h2>
+            <p class="bio-text">
+                Com mais de quatro décadas dedicadas à aviação complexa e à gestão de sistemas críticos, minha trajetória une a rigorosa disciplina operacional à especulação filosófica profunda. 
+            </p>
+            <p class="bio-text">
+                Minhas obras exploram os limites da realidade, arquiteturas de controle, a cibernética da consciência e a soberania do ego através de narrativas imersivas de hard sci-fi e ensaios independentes.
+            </p>
+        </section>
+
+        <section>
+            <h2>Obras & Projetos</h2>
+            <div class="projects-grid">
+                
+                <!-- Projeto Caos Real -->
+                <div class="card">
+                    <div>
+                        <h3>Caos Real</h3>
+                        <p>O colapso da ordem e distopias especulativas. Conheça a landing page oficial do livro[cite: 3].</p>
+                    </div>
+                    <a href="./caosreal/" class="btn">Acessar Projeto</a>
+                </div>
+
+                <!-- Projeto OS11 -->
+                <div class="card">
+                    <div>
+                        <h3>OS11</h3>
+                        <p>Explorações profundas em universos tecnológicos e estruturação de narrativas de ficção científica rigorosa.</p>
+                    </div>
+                    <a href="./os11-landing/" class="btn">Acessar Projeto</a>
+                </div>
+
+                <!-- The Third Door -->
+                <div class="card">
+                    <div>
+                        <h3>The Third Door: The Audit of the Soul</h3>
+                        <p>Uma auditoria implacável sobre a transição pós-morte, filtros administrativos e a soberania da atenção.</p>
+                    </div>
+                    <a href="https://a.co/d/02tZ3ka1" target="_blank" class="btn">Ver na Amazon</a>
+                </div>
+
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Mauricio Custarella. Todos os direitos reservados. | Hospedado via <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
