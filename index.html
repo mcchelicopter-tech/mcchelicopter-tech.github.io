@@ -222,8 +222,6 @@
 
         .lang-pt { display: none; }
         .lang-en { display: block; }
-        .cover-pt { display: none; }
-        .cover-en { display: block; }
     </style>
 </head>
 <body data-lang="en">
@@ -284,8 +282,7 @@
 
                 <!-- 2. Caos Real / The Glass Protocol -->
                 <div class="book-card">
-                    <img src="the_glass_protocol.png" alt="The Glass Protocol" class="book-cover-img cover-en">
-                    <img src="caos_real.png" alt="Caos Real" class="book-cover-img cover-pt">
+                    <img src="the_glass_protocol.png" alt="Caos Real" class="book-cover-img dynamic-cover" data-en="the_glass_protocol.png" data-pt="caos_real.png">
                     <div class="book-info">
                         <div>
                             <div class="book-category">Hard Sci-Fi</div>
@@ -308,8 +305,7 @@
 
                 <!-- 3. OS 11 -->
                 <div class="book-card">
-                    <img src="os_11_en.png" alt="OS 11 EN" class="book-cover-img cover-en">
-                    <img src="os_11.png" alt="OS 11 PT" class="book-cover-img cover-pt">
+                    <img src="os_11_en.png" alt="OS 11" class="book-cover-img dynamic-cover" data-en="os_11_en.png" data-pt="os_11.png">
                     <div class="book-info">
                         <div>
                             <div class="book-category">Hard Sci-Fi</div>
@@ -347,8 +343,7 @@
 
                 <!-- 5. A Única Rota / The Only Route -->
                 <div class="book-card">
-                    <img src="the_only_route.png" alt="The Only Route" class="book-cover-img cover-en">
-                    <img src="a_unica_rota.png" alt="A Única Rota" class="book-cover-img cover-pt">
+                    <img src="the_only_route.png" alt="The Only Route" class="book-cover-img dynamic-cover" data-en="the_only_route.png" data-pt="a_unica_rota.png">
                     <div class="book-info">
                         <div>
                             <div class="book-category">Science Fiction</div>
@@ -365,8 +360,7 @@
 
                 <!-- 6. Multiverso / Multiverse -->
                 <div class="book-card">
-                    <img src="multiverse.png" alt="Multiverse" class="book-cover-img cover-en">
-                    <img src="multiverso.png" alt="Multiverso" class="book-cover-img cover-pt">
+                    <img src="multiverse.png" alt="Multiverse" class="book-cover-img dynamic-cover" data-en="multiverse.png" data-pt="multiverso.png">
                     <div class="book-info">
                         <div>
                             <div class="book-category">Speculative Fiction</div>
@@ -383,8 +377,7 @@
 
                 <!-- 7. A Terceira Porta / The Third Door -->
                 <div class="book-card">
-                    <img src="the_third_door.png" alt="The Third Door" class="book-cover-img cover-en">
-                    <img src="a_terceira_porta.png" alt="A Terceira Porta" class="book-cover-img cover-pt">
+                    <img src="the_tird_door.png" alt="The Third Door" class="book-cover-img dynamic-cover" data-en="the_tird_door.png" data-pt="a_terceira_porta.png">
                     <div class="book-info">
                         <div>
                             <div class="book-category">Hard Sci-Fi / Consciousness</div>
@@ -401,8 +394,7 @@
 
                 <!-- 8. A Dupla Fenda / The Double-Slit -->
                 <div class="book-card">
-                    <img src="the_double_slit.png" alt="The Double-Slit" class="book-cover-img cover-en">
-                    <img src="a_dupla_fenda.png" alt="A Dupla Fenda" class="book-cover-img cover-pt">
+                    <img src="the_double_slit.png" alt="The Double-Slit" class="book-cover-img dynamic-cover" data-en="the_double_slit.png" data-pt="a_dupla_fenda.png">
                     <div class="book-info">
                         <div>
                             <div class="book-category">Hard Sci-Fi</div>
@@ -419,8 +411,7 @@
 
                 <!-- 9. O Eu Doeu / The Ego Hurts -->
                 <div class="book-card">
-                    <img src="the_ego_hurts.png" alt="The Ego Hurts" class="book-cover-img cover-en">
-                    <img src="o_eu_doeu.png" alt="O Eu Doeu" class="book-cover-img cover-pt">
+                    <img src="the_ego_hurts.png" alt="The Ego Hurts" class="book-cover-img dynamic-cover" data-en="the_ego_hurts.png" data-pt="o_eu_doeu.png">
                     <div class="book-info">
                         <div>
                             <div class="book-category">Philosophy & Essay</div>
@@ -437,8 +428,7 @@
 
                 <!-- 10. O Mundo Objeto / The Object World -->
                 <div class="book-card">
-                    <img src="the_object_world.png" alt="The Object World" class="book-cover-img cover-en">
-                    <img src="o_mundo_objeto.png" alt="O Mundo Objeto" class="book-cover-img cover-pt">
+                    <img src="the_object_world.png" alt="The Object World" class="book-cover-img dynamic-cover" data-en="the_object_world.png" data-pt="o_mundo_objeto.png">
                     <div class="book-info">
                         <div>
                             <div class="book-category">Science Fiction</div>
@@ -483,23 +473,24 @@
             const toggleBtn = document.getElementById('langToggle');
             const enElements = document.querySelectorAll('.lang-en');
             const ptElements = document.querySelectorAll('.lang-pt');
-            const coverEnElements = document.querySelectorAll('.cover-en');
-            const coverPtElements = document.querySelectorAll('.cover-pt');
+            const dynamicCovers = document.querySelectorAll('.dynamic-cover');
 
             if (body.getAttribute('data-lang') === 'en') {
                 body.setAttribute('data-lang', 'pt');
                 enElements.forEach(el => el.style.display = 'none');
                 ptElements.forEach(el => el.style.display = 'block');
-                coverEnElements.forEach(el => el.style.display = 'none');
-                coverPtElements.forEach(el => el.style.display = 'block');
+                dynamicCovers.forEach(img => {
+                    if (img.dataset.pt) img.src = img.dataset.pt;
+                });
                 toggleBtn.innerText = 'Switch to English';
                 document.documentElement.lang = 'pt-BR';
             } else {
                 body.setAttribute('data-lang', 'en');
                 ptElements.forEach(el => el.style.display = 'none');
                 enElements.forEach(el => el.style.display = 'block');
-                coverPtElements.forEach(el => el.style.display = 'none');
-                coverEnElements.forEach(el => el.style.display = 'block');
+                dynamicCovers.forEach(img => {
+                    if (img.dataset.en) img.src = img.dataset.en;
+                });
                 toggleBtn.innerText = 'PT-BR / English';
                 document.documentElement.lang = 'en';
             }
@@ -508,8 +499,6 @@
         document.addEventListener("DOMContentLoaded", () => {
             document.querySelectorAll('.lang-pt').forEach(el => el.style.display = 'none');
             document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'block');
-            document.querySelectorAll('.cover-pt').forEach(el => el.style.display = 'none');
-            document.querySelectorAll('.cover-en').forEach(el => el.style.display = 'block');
         });
     </script>
 
