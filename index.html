@@ -170,6 +170,11 @@
         .btn-group {
             display: flex;
             gap: 0.5rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .btn-group:last-child {
+            margin-bottom: 0;
         }
 
         .btn {
@@ -178,10 +183,10 @@
             background-color: transparent;
             color: var(--accent);
             border: 1px solid var(--accent);
-            padding: 0.5rem 0.2rem;
+            padding: 0.4rem 0.2rem;
             border-radius: 4px;
             text-decoration: none;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             font-weight: 600;
             text-align: center;
             transition: background-color 0.2s, color 0.2s;
@@ -189,6 +194,16 @@
         
         .btn:hover {
             background-color: var(--accent);
+            color: var(--bg-color);
+        }
+
+        .btn-lp {
+            border-color: #10b981;
+            color: #34d399;
+        }
+
+        .btn-lp:hover {
+            background-color: #10b981;
             color: var(--bg-color);
         }
         
@@ -251,7 +266,7 @@
             <h2 class="lang-pt">Vitrine Literária (Portfólio Completo)</h2>
             <div class="books-grid">
                 
-                <!-- 1. O Calor da Verdade (Apenas PT) -->
+                <!-- 1. O Calor da Verdade -->
                 <div class="book-card">
                     <img src="o_calor_da_verdade.png" alt="O Calor da Verdade" class="book-cover-img">
                     <div class="book-info">
@@ -267,7 +282,7 @@
                     </div>
                 </div>
 
-                <!-- 2. Caos Real / The Glass Protocol (Bilíngue) -->
+                <!-- 2. Caos Real / The Glass Protocol (Com Landing Pages e Lojas) -->
                 <div class="book-card">
                     <img src="the_glass_protocol.png" alt="The Glass Protocol" class="book-cover-img cover-en">
                     <img src="caos_real.png" alt="Caos Real" class="book-cover-img cover-pt">
@@ -278,14 +293,20 @@
                             <p class="lang-en">Systemic collapse and protocol logic in speculative futures.</p>
                             <p class="lang-pt">O colapso sistêmico e a lógica de protocolos em futuros especulativos.</p>
                         </div>
-                        <div class="btn-group">
-                            <a href="https://a.co/d/061BQxDc" target="_blank" class="btn">Amazon EN</a>
-                            <a href="https://a.co/d/04Pspdpp" target="_blank" class="btn">Amazon PT</a>
+                        <div>
+                            <div class="btn-group">
+                                <a href="./caosreal/en/" target="_blank" class="btn btn-lp">LP (EN)</a>
+                                <a href="./caosreal/" target="_blank" class="btn btn-lp">LP (PT)</a>
+                            </div>
+                            <div class="btn-group">
+                                <a href="https://a.co/d/061BQxDc" target="_blank" class="btn">Amazon EN</a>
+                                <a href="https://a.co/d/04Pspdpp" target="_blank" class="btn">Amazon PT</a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 3. OS 11 (Bilíngue) -->
+                <!-- 3. OS 11 (Com Landing Page e Lojas) -->
                 <div class="book-card">
                     <img src="os_11_en.png" alt="OS 11 EN" class="book-cover-img cover-en">
                     <img src="os_11.png" alt="OS 11 PT" class="book-cover-img cover-pt">
@@ -296,14 +317,19 @@
                             <p class="lang-en">The science they erased and the only key that can save us.</p>
                             <p class="lang-pt">A ciência que eles apagaram e a única chave que pode nos salvar.</p>
                         </div>
-                        <div class="btn-group">
-                            <a href="https://a.co/d/0iuPLjiW" target="_blank" class="btn">Amazon EN</a>
-                            <a href="https://a.co/d/0dI9duBp" target="_blank" class="btn">Amazon PT</a>
+                        <div>
+                            <div class="btn-group">
+                                <a href="https://mcchelicopter-tech.github.io/os11-landing/" target="_blank" class="btn btn-lp">Landing Page</a>
+                            </div>
+                            <div class="btn-group">
+                                <a href="https://a.co/d/0iuPLjiW" target="_blank" class="btn">Amazon EN</a>
+                                <a href="https://a.co/d/0dI9duBp" target="_blank" class="btn">Amazon PT</a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 4. Ferro e Osso (Apenas PT) -->
+                <!-- 4. Ferro e Osso -->
                 <div class="book-card">
                     <img src="ferro_e_osso.png" alt="Ferro e Osso" class="book-cover-img">
                     <div class="book-info">
@@ -319,7 +345,7 @@
                     </div>
                 </div>
 
-                <!-- 5. A Única Rota / The Only Route (Bilíngue) -->
+                <!-- 5. A Única Rota / The Only Route -->
                 <div class="book-card">
                     <img src="the_only_route.png" alt="The Only Route" class="book-cover-img cover-en">
                     <img src="a_unica_rota.png" alt="A Única Rota" class="book-cover-img cover-pt">
@@ -337,7 +363,7 @@
                     </div>
                 </div>
 
-                <!-- 6. Multiverso / Multiverse (Bilíngue) -->
+                <!-- 6. Multiverso / Multiverse -->
                 <div class="book-card">
                     <img src="multiverse.png" alt="Multiverse" class="book-cover-img cover-en">
                     <img src="multiverso.png" alt="Multiverso" class="book-cover-img cover-pt">
@@ -355,7 +381,7 @@
                     </div>
                 </div>
 
-                <!-- 7. A Terceira Porta / The Third Door (Bilíngue) -->
+                <!-- 7. A Terceira Porta / The Third Door -->
                 <div class="book-card">
                     <img src="the_third_door.png" alt="The Third Door" class="book-cover-img cover-en">
                     <img src="a_terceira_porta.png" alt="A Terceira Porta" class="book-cover-img cover-pt">
@@ -373,7 +399,7 @@
                     </div>
                 </div>
 
-                <!-- 8. A Dupla Fenda / The Double-Slit (Bilíngue) -->
+                <!-- 8. A Dupla Fenda / The Double-Slit -->
                 <div class="book-card">
                     <img src="the_double_slit.png" alt="The Double-Slit" class="book-cover-img cover-en">
                     <img src="a_dupla_fenda.png" alt="A Dupla Fenda" class="book-cover-img cover-pt">
@@ -391,7 +417,7 @@
                     </div>
                 </div>
 
-                <!-- 9. O Eu Doeu / The Ego Hurts (Bilíngue) -->
+                <!-- 9. O Eu Doeu / The Ego Hurts -->
                 <div class="book-card">
                     <img src="the_ego_hurts.png" alt="The Ego Hurts" class="book-cover-img cover-en">
                     <img src="o_eu_doeu.png" alt="O Eu Doeu" class="book-cover-img cover-pt">
@@ -409,7 +435,7 @@
                     </div>
                 </div>
 
-                <!-- 10. O Mundo Objeto / The Object World (Bilíngue) -->
+                <!-- 10. O Mundo Objeto / The Object World -->
                 <div class="book-card">
                     <img src="the_object_world.png" alt="The Object World" class="book-cover-img cover-en">
                     <img src="o_mundo_objeto.png" alt="O Mundo Objeto" class="book-cover-img cover-pt">
@@ -427,7 +453,7 @@
                     </div>
                 </div>
 
-                <!-- 11. Além do Formigueiro (Apenas PT) -->
+                <!-- 11. Além do Formigueiro -->
                 <div class="book-card">
                     <img src="alem_do_formigueiro.png" alt="Além do Formigueiro" class="book-cover-img">
                     <div class="book-info">
@@ -447,7 +473,7 @@
         </section>
 
         <footer>
-            <p>&copy; 2026 Mauricio Custarella. <span class="lang-en">All rights reserved. | Hosted via</span><span class="lang-pt">Todos os direitos reservados. | Hospedado via</span> <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
+            <p>&copy; 2026 Mauricio Custarella. <span class="lang-en">All rights reserved. | Hosted via</span><span class="lang-pt">Todos os direitos reservados. | Hospedado via</span> <a href="https://pages.github.pages/" target="_blank">GitHub Pages</a>.</p>
         </footer>
     </div>
 
