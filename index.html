@@ -97,6 +97,16 @@
             padding-bottom: 0.75rem;
             color: #ffffff;
         }
+
+        h3.category-title {
+            font-size: 1.3rem;
+            color: var(--accent);
+            margin: 2.5rem 0 1.5rem 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-left: 4px solid var(--accent);
+            padding-left: 0.75rem;
+        }
         
         .bio-text {
             color: var(--text-secondary);
@@ -154,7 +164,7 @@
             font-weight: 700;
         }
         
-        .book-card h3 {
+        .book-card h4 {
             font-size: 1.1rem;
             margin-bottom: 0.5rem;
             color: var(--text-primary);
@@ -260,33 +270,21 @@
         </section>
 
         <section>
-            <h2 class="lang-en">Literary Showcase (Complete Portfolio)</h2>
-            <h2 class="lang-pt">Vitrine Literária (Portfólio Completo)</h2>
+            <h2 class="lang-en">Literary Showcase</h2>
+            <h2 class="lang-pt">Vitrine Literária</h2>
+
+            <!-- BLOCO 1: HARD SCI-FI & SPECULATIVE FICTION -->
+            <h3 class="category-title lang-en">Hard Science Fiction & Speculative Works</h3>
+            <h3 class="category-title lang-pt">Hard Science Fiction & Obras Especulativas</h3>
             <div class="books-grid">
                 
-                <!-- 1. O Calor da Verdade -->
-                <div class="book-card">
-                    <img src="o_calor_da_verdade.png" alt="O Calor da Verdade" class="book-cover-img">
-                    <div class="book-info">
-                        <div>
-                            <div class="book-category">Essay / Philosophy</div>
-                            <h3>O Calor da Verdade</h3>
-                            <p class="lang-en">Reflections on truth, reality, and human essence.</p>
-                            <p class="lang-pt">Reflexões profundas sobre a verdade, a realidade e a essência humana.</p>
-                        </div>
-                        <div class="btn-group">
-                            <a href="https://loja.uiclap.com/titulo/ua198816" target="_blank" class="btn">UICLAP</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2. Caos Real / The Glass Protocol -->
+                <!-- Caos Real / The Glass Protocol -->
                 <div class="book-card">
                     <img src="the_glass_protocol.png" alt="Caos Real" class="book-cover-img dynamic-cover" data-en="the_glass_protocol.png" data-pt="caos_real.png">
                     <div class="book-info">
                         <div>
                             <div class="book-category">Hard Sci-Fi</div>
-                            <h3>Caos Real / The Glass Protocol</h3>
+                            <h4>Caos Real / The Glass Protocol</h4>
                             <p class="lang-en">Systemic collapse and protocol logic in speculative futures.</p>
                             <p class="lang-pt">O colapso sistêmico e a lógica de protocolos em futuros especulativos.</p>
                         </div>
@@ -303,13 +301,13 @@
                     </div>
                 </div>
 
-                <!-- 3. OS 11 (Corrigido para os_11-en.png) -->
+                <!-- OS 11 -->
                 <div class="book-card">
                     <img src="os_11-en.png" alt="OS 11" class="book-cover-img dynamic-cover" data-en="os_11-en.png" data-pt="os_11.png">
                     <div class="book-info">
                         <div>
                             <div class="book-category">Hard Sci-Fi</div>
-                            <h3>OS 11</h3>
+                            <h4>OS 11</h4>
                             <p class="lang-en">The science they erased and the only key that can save us.</p>
                             <p class="lang-pt">A ciência que eles apagaram e a única chave que pode nos salvar.</p>
                         </div>
@@ -325,29 +323,13 @@
                     </div>
                 </div>
 
-                <!-- 4. Ferro e Osso -->
-                <div class="book-card">
-                    <img src="ferro_e_osso.png" alt="Ferro e Osso" class="book-cover-img">
-                    <div class="book-info">
-                        <div>
-                            <div class="book-category">Chronicles & Essays</div>
-                            <h3>Ferro e Osso</h3>
-                            <p class="lang-en">Unfiltered chronicles on reality, pragmatism, and human nature.</p>
-                            <p class="lang-pt">Crônicas sem anestesia sobre a realidade e pragmatismo.</p>
-                        </div>
-                        <div class="btn-group">
-                            <a href="https://a.co/d/03JFM5tm" target="_blank" class="btn">Amazon PT</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 5. A Única Rota / The Only Route -->
+                <!-- A Única Rota / The Only Route -->
                 <div class="book-card">
                     <img src="the_only_route.png" alt="The Only Route" class="book-cover-img dynamic-cover" data-en="the_only_route.png" data-pt="a_unica_rota.png">
                     <div class="book-info">
                         <div>
                             <div class="book-category">Science Fiction</div>
-                            <h3>The Only Route / A Única Rota</h3>
+                            <h4>The Only Route / A Única Rota</h4>
                             <p class="lang-en">Tomorrow's choice and critical decisions within restricted horizons.</p>
                             <p class="lang-pt">A escolha do amanhã e decisões críticas em horizontes restritos.</p>
                         </div>
@@ -358,13 +340,13 @@
                     </div>
                 </div>
 
-                <!-- 6. Multiverso / Multiverse -->
+                <!-- Multiverso / Multiverse -->
                 <div class="book-card">
                     <img src="multiverse.png" alt="Multiverse" class="book-cover-img dynamic-cover" data-en="multiverse.png" data-pt="multiverso.png">
                     <div class="book-info">
                         <div>
                             <div class="book-category">Speculative Fiction</div>
-                            <h3>Multiverse: The Source Frequency</h3>
+                            <h4>Multiverse: The Source Frequency</h4>
                             <p class="lang-en">Deep explorations into the fundamental frequencies of reality.</p>
                             <p class="lang-pt">Explorações profundas nas frequências fundamentais da realidade.</p>
                         </div>
@@ -375,30 +357,13 @@
                     </div>
                 </div>
 
-                <!-- 7. A Terceira Porta / The Third Door -->
-                <div class="book-card">
-                    <img src="the_tird_door.png" alt="The Third Door" class="book-cover-img dynamic-cover" data-en="the_tird_door.png" data-pt="a_terceira_porta.png">
-                    <div class="book-info">
-                        <div>
-                            <div class="book-category">Hard Sci-Fi / Consciousness</div>
-                            <h3>The Third Door / A Terceira Porta</h3>
-                            <p class="lang-en">An unrelenting audit of the post-mortem transition and administrative filters.</p>
-                            <p class="lang-pt">Uma auditoria implacável sobre a transição pós-morte e filtros administrativos.</p>
-                        </div>
-                        <div class="btn-group">
-                            <a href="https://a.co/d/02a7OKcN" target="_blank" class="btn">Amazon EN</a>
-                            <a href="https://a.co/d/0ay8rS0n" target="_blank" class="btn">Amazon PT</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 8. A Dupla Fenda / The Double-Slit -->
+                <!-- A Dupla Fenda / The Double-Slit -->
                 <div class="book-card">
                     <img src="the_double_slit.png" alt="The Double-Slit" class="book-cover-img dynamic-cover" data-en="the_double_slit.png" data-pt="a_dupla_fenda.png">
                     <div class="book-info">
                         <div>
                             <div class="book-category">Hard Sci-Fi</div>
-                            <h3>The Double-Slit / A Dupla Fenda</h3>
+                            <h4>The Double-Slit / A Dupla Fenda</h4>
                             <p class="lang-en">Quantum mechanics, observers, and cracks in perception.</p>
                             <p class="lang-pt">Mecânica quântica, observadores e fendas na percepção.</p>
                         </div>
@@ -409,30 +374,13 @@
                     </div>
                 </div>
 
-                <!-- 9. O Eu Doeu / The Ego Hurts -->
-                <div class="book-card">
-                    <img src="the_ego_hurts.png" alt="The Ego Hurts" class="book-cover-img dynamic-cover" data-en="the_ego_hurts.png" data-pt="o_eu_doeu.png">
-                    <div class="book-info">
-                        <div>
-                            <div class="book-category">Philosophy & Essay</div>
-                            <h3>The Ego Hurts / O Eu Doeu</h3>
-                            <p class="lang-en">A surgical analysis of ego attachments and self-perception.</p>
-                            <p class="lang-pt">Uma análise cirúrgica sobre as amarras do ego e a percepção de si.</p>
-                        </div>
-                        <div class="btn-group">
-                            <a href="https://a.co/d/07QbaoYY" target="_blank" class="btn">Amazon EN</a>
-                            <a href="https://a.co/d/06tMnUKw" target="_blank" class="btn">Amazon PT</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 10. O Mundo Objeto / The Object World -->
+                <!-- O Mundo Objeto / The Object World -->
                 <div class="book-card">
                     <img src="the_object_world.png" alt="The Object World" class="book-cover-img dynamic-cover" data-en="the_object_world.png" data-pt="o_mundo_objeto.png">
                     <div class="book-info">
                         <div>
                             <div class="book-category">Science Fiction</div>
-                            <h3>The Object World / O Mundo Objeto</h3>
+                            <h4>The Object World / O Mundo Objeto</h4>
                             <p class="lang-en">When the objectification of consciousness shapes a new world.</p>
                             <p class="lang-pt">Quando a objetificação da consciência molda as regras de um novo mundo.</p>
                         </div>
@@ -443,13 +391,93 @@
                     </div>
                 </div>
 
-                <!-- 11. Além do Formigueiro -->
+            </div>
+
+            <!-- BLOCO 2: PHILOSOPHY, ESSAYS & CONSCIOUSNESS -->
+            <h3 class="category-title lang-en">Philosophy, Essays & Consciousness</h3>
+            <h3 class="category-title lang-pt">Filosofia, Ensaios & Consciência</h3>
+            <div class="books-grid">
+                
+                <!-- O Calor da Verdade -->
+                <div class="book-card">
+                    <img src="o_calor_da_verdade.png" alt="O Calor da Verdade" class="book-cover-img">
+                    <div class="book-info">
+                        <div>
+                            <div class="book-category">Essay / Philosophy</div>
+                            <h4>O Calor da Verdade</h4>
+                            <p class="lang-en">Reflections on truth, reality, and human essence.</p>
+                            <p class="lang-pt">Reflexões profundas sobre a verdade, a realidade e a essência humana.</p>
+                        </div>
+                        <div class="btn-group">
+                            <a href="https://loja.uiclap.com/titulo/ua198816" target="_blank" class="btn">UICLAP</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- A Terceira Porta / The Third Door -->
+                <div class="book-card">
+                    <img src="the_tird_door.png" alt="The Third Door" class="book-cover-img dynamic-cover" data-en="the_tird_door.png" data-pt="a_terceira_porta.png">
+                    <div class="book-info">
+                        <div>
+                            <div class="book-category">Hard Sci-Fi / Consciousness</div>
+                            <h4>The Third Door / A Terceira Porta</h4>
+                            <p class="lang-en">An unrelenting audit of the post-mortem transition and administrative filters.</p>
+                            <p class="lang-pt">Uma auditoria implacável sobre a transição pós-morte e filtros administrativos.</p>
+                        </div>
+                        <div class="btn-group">
+                            <a href="https://a.co/d/02a7OKcN" target="_blank" class="btn">Amazon EN</a>
+                            <a href="https://a.co/d/0ay8rS0n" target="_blank" class="btn">Amazon PT</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- O Eu Doeu / The Ego Hurts -->
+                <div class="book-card">
+                    <img src="the_ego_hurts.png" alt="The Ego Hurts" class="book-cover-img dynamic-cover" data-en="the_ego_hurts.png" data-pt="o_eu_doeu.png">
+                    <div class="book-info">
+                        <div>
+                            <div class="book-category">Philosophy & Essay</div>
+                            <h4>The Ego Hurts / O Eu Doeu</h4>
+                            <p class="lang-en">A surgical analysis of ego attachments and self-perception.</p>
+                            <p class="lang-pt">Uma análise cirúrgica sobre as amarras do ego e a percepção de si.</p>
+                        </div>
+                        <div class="btn-group">
+                            <a href="https://a.co/d/07QbaoYY" target="_blank" class="btn">Amazon EN</a>
+                            <a href="https://a.co/d/06tMnUKw" target="_blank" class="btn">Amazon PT</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- BLOCO 3: CHRONICLES, POETRY & ESSAYS -->
+            <h3 class="category-title lang-en">Chronicles & Poetry</h3>
+            <h3 class="category-title lang-pt">Crônicas & Poesia</h3>
+            <div class="books-grid">
+                
+                <!-- Ferro e Osso -->
+                <div class="book-card">
+                    <img src="ferro_e_osso.png" alt="Ferro e Osso" class="book-cover-img">
+                    <div class="book-info">
+                        <div>
+                            <div class="book-category">Chronicles & Essays</div>
+                            <h4>Ferro e Osso</h4>
+                            <p class="lang-en">Unfiltered chronicles on reality, pragmatism, and human nature.</p>
+                            <p class="lang-pt">Crônicas sem anestesia sobre a realidade e pragmatismo.</p>
+                        </div>
+                        <div class="btn-group">
+                            <a href="https://a.co/d/03JFM5tm" target="_blank" class="btn">Amazon PT</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Além do Formigueiro -->
                 <div class="book-card">
                     <img src="alem_do_formigueiro.png" alt="Além do Formigueiro" class="book-cover-img">
                     <div class="book-info">
                         <div>
                             <div class="book-category">Essays & Poetry</div>
-                            <h3>Além do Formigueiro</h3>
+                            <h4>Além do Formigueiro</h4>
                             <p class="lang-en">The poet's truths facing urban haste and collective patterns.</p>
                             <p class="lang-pt">As verdades do poeta diante da pressa urbana.</p>
                         </div>
@@ -460,6 +488,7 @@
                 </div>
 
             </div>
+
         </section>
 
         <footer>
