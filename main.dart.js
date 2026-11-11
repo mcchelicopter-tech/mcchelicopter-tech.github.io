@@ -24522,7 +24522,7 @@ b0=A.al(["numero","N\xe3o identificado","campo_a","N\xe3o informado","campo_b","
 b1=A.dq("([A-Z]\\d+/\\d{2})",!0,!1,!1).ft(b2)
 if(b1!=null){a9=b1.b[0]
 a9.toString
-b0.m(0,"numero",a9)}p=A.dq("Q\\)\\s*([A-Z]{4})/([A-Z0-9]{5})/.+?/(\\d{3})/(\\d{3})/",!0,!1,!1).ft(b2)
+b0.m(0,"numero",a9)}p=A.dq("Q\\)\\s*([A-Z]{4})/([A-Z0-9]{5})/[^/\\n]*/(\\d{3})/(\\d{3})/",!0,!1,!1).ft(b2)
 s=p!=null?3:4
 break
 case 3:a9=p.b
