@@ -1,45 +1,535 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mauricio Custarella | Author & Researcher</title>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #131b2e;
+            --text-primary: #f0f6fc;
+            --text-secondary: #8b949e;
+            --accent: #38bdf8;
+            --border: #1e293b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
+        .lang-switch {
+            text-align: right;
+            margin-bottom: 1rem;
+        }
 
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+        .lang-btn {
+            background-color: var(--card-bg);
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: background-color 0.2s, color 0.2s;
+        }
 
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
- <base href="/">
-  <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+        .lang-btn:hover {
+            background-color: var(--accent);
+            color: var(--bg-color);
+        }
+        
+        header {
+            text-align: center;
+            padding: 2rem 0 2rem 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 3rem;
+        }
 
-  <!-- iOS meta tags & icons -->
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="notam_decoder">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+        .author-photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            box-shadow: 0 8px 24px rgba(56, 189, 248, 0.2);
+            margin-bottom: 1.25rem;
+        }
+        
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+            color: #ffffff;
+        }
+        
+        header p.tagline {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        section {
+            margin-bottom: 4rem;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.75rem;
+            color: #ffffff;
+        }
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+        h3.category-title {
+            font-size: 1.3rem;
+            color: var(--accent);
+            margin: 2.5rem 0 1.5rem 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-left: 4px solid var(--accent);
+            padding-left: 0.75rem;
+        }
+        
+        .bio-text {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 2rem;
+        }
+        
+        .book-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        
+        .book-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
 
-  <title>notam_decoder</title>
-  <link rel="manifest" href="manifest.json">
+        .book-cover-img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .book-info {
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+
+        .book-category {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .book-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            line-height: 1.4;
+        }
+        
+        .book-card p {
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            margin-bottom: 1.25rem;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .btn-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .btn {
+            flex: 1;
+            display: block;
+            background-color: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 0.4rem 0.2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-align: center;
+            transition: background-color 0.2s, color 0.2s;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent);
+            color: var(--bg-color);
+        }
+
+        .btn-lp {
+            border-color: #10b981;
+            color: #34d399;
+        }
+
+        .btn-lp:hover {
+            background-color: #10b981;
+            color: var(--bg-color);
+        }
+        
+        footer {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .lang-pt { display: none; }
+        .lang-en { display: block; }
+    </style>
 </head>
-<body>
-  <!--
-    You can customize the "flutter_bootstrap.js" script.
-    This is useful to provide a custom configuration to the Flutter loader
-    or to give the user feedback during the initialization process.
+<body data-lang="en">
 
-    For more details:
-    * https://docs.flutter.dev/platform-integration/web/initialization
-  -->
-  <script src="flutter_bootstrap.js" async></script>
+    <div class="container">
+        <div class="lang-switch">
+            <button class="lang-btn" id="langToggle" onclick="toggleLanguage()">PT-BR / English</button>
+        </div>
+
+        <header>
+            <img src="autor.jpg" alt="Mauricio Custarella" class="author-photo">
+            <h1>Mauricio Custarella</h1>
+            <p class="tagline">
+                <span class="lang-en">Hard Science Fiction Author, Philosophical Essayist & Consciousness Researcher.</span>
+                <span class="lang-pt">Escritor de Hard Science Fiction, Ensaísta Filosófico e Pesquisador da Consciência.</span>
+            </p>
+        </header>
+
+        <section>
+            <h2 class="lang-en">About the Author</h2>
+            <h2 class="lang-pt">Sobre o Autor</h2>
+            
+            <p class="bio-text lang-en">
+                With over four decades dedicated to complex aviation and critical systems management, Mauricio Custarella's work unites rigorous operational discipline with deep philosophical speculation.
+            </p>
+            <p class="bio-text lang-pt">
+                Com mais de quatro décadas dedicadas à aviação complexa e à gestão de sistemas críticos, o trabalho de Mauricio Custarella une a rigorosa disciplina operacional à especulação filosófica profunda.
+            </p>
+
+            <p class="bio-text lang-en">
+                His works explore the limits of reality, control architectures, the cybernetics of consciousness, and ego sovereignty through immersive hard sci-fi narratives and independent essays published on Amazon KDP and UICLAP.
+            </p>
+            <p class="bio-text lang-pt">
+                Suas obras exploram os limites da realidade, arquiteturas de controle, a cibernética da consciência e a soberania do ego através de narrativas imersivas de hard sci-fi e ensaios independentes publicados na Amazon KDP e UICLAP.
+            </p>
+        </section>
+
+        <section>
+            <h2 class="lang-en">Literary Showcase</h2>
+            <h2 class="lang-pt">Vitrine Literária</h2>
+
+            <!-- BLOCO 1: HARD SCI-FI & SPECULATIVE FICTION -->
+            <h3 class="category-title lang-en">Hard Science Fiction & Speculative Works</h3>
+            <h3 class="category-title lang-pt">Hard Science Fiction & Obras Especulativas</h3>
+            <div class="books-grid">
+                
+                <!-- Caos Real / The Glass Protocol -->
+                <div class="book-card">
+                    <img src="the_glass_protocol.png" alt="Caos Real" class="book-cover-img dynamic-cover" data-en="the_glass_protocol.png" data-pt="caos_real.png">
+                    <div class="book-info">
+                        <div>
+                            <div class="book-category">Hard Sci-Fi</div>
+                            <h4>Caos Real / The Glass Protocol</h4>
+                            <p class="lang-en">Systemic collapse and protocol logic in speculative futures.</p>
+                            <p class="lang-pt">O colapso sistêmico e a lógica de protocolos em futuros especulativos.</p>
+                        </div>
+                        <div>
+                            <div class="btn-group">
+                                <a href="./caosreal/en/" target="_blank" class="btn btn-lp">LP (EN)</a>
+                                <a href="./caosreal/" target="_blank" class="btn btn-lp">LP (PT)</a>
+                            </div>
+                            <div class="btn-group">
+                                <a href="https://a.co/d/061BQxDc" target="_blank" class="btn">Amazon EN</a>
+                                <a href="https://a.co/d/04Pspdpp" target="_blank" class="btn">Amazon PT</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- OS 11 -->
+                <div class="book-card">
+                    <img src="os_11-en.png" alt="OS 11" class="book-cover-img dynamic-cover" data-en="os_11-en.png" data-pt="os_11.png">
+                    <div class="book-info">
+                        <div>
+                            <div class="book-category">Hard Sci-Fi</div>
+                            <h4>OS 11</h4>
+                            <p class="lang-en">The science they erased and the only key that can save us.</p>
+                            <p class="lang-pt">A ciência que eles apagaram e a única chave que pode nos salvar.</p>
+                        </div>
+                        <div>
+                            <div class="btn-group">
+                                <a href="https://mcchelicopter-tech.github.io/os11-landing/" target="_blank" class="btn btn-lp">Landing Page</a>
+                            </div>
+                            <div class="btn-group">
+                                <a href="https://a.co/d/0iuPLjiW" target="_blank" class="btn">Amazon EN</a>
+                                <a href="https://a.co/d/0dI9duBp" target="_blank" class="btn">Amazon PT</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- A Única Rota / The Only Route -->
+                <div class="book-card">
+                    <img src="the_only_route.png" alt="The Only Route" class="book-cover-img dynamic-cover" data-en="the_only_route.png" data-pt="a_unica_rota.png">
+                    <div class="book-info">
+                        <div>
+                            <div class="book-category">Science Fiction</div>
+                            <h4>The Only Route / A Única Rota</h4>
+                            <p class="lang-en">Tomorrow's choice and critical decisions within restricted horizons.</p>
+                            <p class="lang-pt">A escolha do amanhã e decisões críticas em horizontes restritos.</p>
+                        </div>
+                        <div class="btn-group">
+                            <a href="https://a.co/d/06oBEgDA" target="_blank" class="btn">Amazon EN</a>
+                            <a href="https://a.co/d/0fjvq6xF" target="_blank" class="btn">Amazon PT</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Multiverso / Multiverse -->
+                <div class="book-card">
+                    <img src="multiverse.png" alt="Multiverse" class="book-cover-img dynamic-cover" data-en="multiverse.png" data-pt="multiverso.png">
+                    <div class="book-info">
+                        <div>
+                            <div class="book-category">Speculative Fiction</div>
+                            <h4>Multiverse: The Source Frequency</h4>
+                            <p class="lang-en">Deep explorations into the fundamental frequencies of reality.</p>
+                            <p class="lang-pt">Explorações profundas nas frequências fundamentais da realidade.</p>
+                        </div>
+                        <div class="btn-group">
+                            <a href="https://a.co/d/03aclfMl" target="_blank" class="btn">Amazon EN</a>
+                            <a href="https://a.co/d/0cg0dWH7" target="_blank" class="btn">Amazon PT</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- A Dupla Fenda / The Double-Slit -->
+                <div class="book-card">
+                    <img src="the_double_slit.png" alt="The Double-Slit" class="book-cover-img dynamic-cover" data-en="the_double_slit.png" data-pt="a_dupla_fenda.png">
+                    <div class="book-info">
+                        <div>
+                            <div class="book-category">Hard Sci-Fi</div>
+                            <h4>The Double-Slit / A Dupla Fenda</h4>
+                            <p class="lang-en">Quantum mechanics, observers, and cracks in perception.</p>
+                            <p class="lang-pt">Mecânica quântica, observadores e fendas na percepção.</p>
+                        </div>
+                        <div class="btn-group">
+                            <a href="https://a.co/d/0aRWv0Px" target="_blank" class="btn">Amazon EN</a>
+                            <a href="https://a.co/d/0hpkmtDH" target="_blank" class="btn">Amazon PT</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- O Mundo Objeto / The Object World -->
+                <div class="book-card">
+                    <img src="the_object_world.png" alt="The Object World" class="book-cover-img dynamic-cover" data-en="the_object_world.png" data-pt="o_mundo_objeto.png">
+                    <div class="book-info">
+                        <div>
+                            <div class="book-category">Science Fiction</div>
+                            <h4>The Object World / O Mundo Objeto</h4>
+                            <p class="lang-en">When the objectification of consciousness shapes a new world.</p>
+                            <p class="lang-pt">Quando a objetificação da consciência molda as regras de um novo mundo.</p>
+                        </div>
+                        <div class="btn-group">
+                            <a href="https://a.co/d/0bt38Q2j" target="_blank" class="btn">Amazon EN</a>
+                            <a href="https://a.co/d/0bPVDDT0" target="_blank" class="btn">Amazon PT</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- BLOCO 2: PHILOSOPHY, ESSAYS & CONSCIOUSNESS -->
+            <h3 class="category-title lang-en">Philosophy, Essays & Consciousness</h3>
+            <h3 class="category-title lang-pt">Filosofia, Ensaios & Consciência</h3>
+            <div class="books-grid">
+                
+                <!-- O Calor da Verdade -->
+                <div class="book-card">
+                    <img src="o_calor_da_verdade.png" alt="O Calor da Verdade" class="book-cover-img">
+                    <div class="book-info">
+                        <div>
+                            <div class="book-category">Essay / Philosophy</div>
+                            <h4>O Calor da Verdade</h4>
+                            <p class="lang-en">Reflections on truth, reality, and human essence.</p>
+                            <p class="lang-pt">Reflexões profundas sobre a verdade, a realidade e a essência humana.</p>
+                        </div>
+                        <div class="btn-group">
+                            <a href="https://loja.uiclap.com/titulo/ua198816" target="_blank" class="btn">UICLAP</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- A Terceira Porta / The Third Door -->
+                <div class="book-card">
+                    <img src="the_tird_door.png" alt="The Third Door" class="book-cover-img dynamic-cover" data-en="the_tird_door.png" data-pt="a_terceira_porta.png">
+                    <div class="book-info">
+                        <div>
+                            <div class="book-category">Hard Sci-Fi / Consciousness</div>
+                            <h4>The Third Door / A Terceira Porta</h4>
+                            <p class="lang-en">An unrelenting audit of the post-mortem transition and administrative filters.</p>
+                            <p class="lang-pt">Uma auditoria implacável sobre a transição pós-morte e filtros administrativos.</p>
+                        </div>
+                        <div class="btn-group">
+                            <a href="https://a.co/d/02a7OKcN" target="_blank" class="btn">Amazon EN</a>
+                            <a href="https://a.co/d/0ay8rS0n" target="_blank" class="btn">Amazon PT</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- O Eu Doeu / The Ego Hurts -->
+                <div class="book-card">
+                    <img src="the_ego_hurts.png" alt="The Ego Hurts" class="book-cover-img dynamic-cover" data-en="the_ego_hurts.png" data-pt="o_eu_doeu.png">
+                    <div class="book-info">
+                        <div>
+                            <div class="book-category">Philosophy & Essay</div>
+                            <h4>The Ego Hurts / O Eu Doeu</h4>
+                            <p class="lang-en">A surgical analysis of ego attachments and self-perception.</p>
+                            <p class="lang-pt">Uma análise cirúrgica sobre as amarras do ego e a percepção de si.</p>
+                        </div>
+                        <div class="btn-group">
+                            <a href="https://a.co/d/07QbaoYY" target="_blank" class="btn">Amazon EN</a>
+                            <a href="https://a.co/d/06tMnUKw" target="_blank" class="btn">Amazon PT</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- BLOCO 3: CHRONICLES, POETRY & ESSAYS -->
+            <h3 class="category-title lang-en">Chronicles & Poetry</h3>
+            <h3 class="category-title lang-pt">Crônicas & Poesia</h3>
+            <div class="books-grid">
+                
+                <!-- Ferro e Osso -->
+                <div class="book-card">
+                    <img src="ferro_e_osso.png" alt="Ferro e Osso" class="book-cover-img">
+                    <div class="book-info">
+                        <div>
+                            <div class="book-category">Chronicles & Essays</div>
+                            <h4>Ferro e Osso</h4>
+                            <p class="lang-en">Unfiltered chronicles on reality, pragmatism, and human nature.</p>
+                            <p class="lang-pt">Crônicas sem anestesia sobre a realidade e pragmatismo.</p>
+                        </div>
+                        <div class="btn-group">
+                            <a href="https://a.co/d/03JFM5tm" target="_blank" class="btn">Amazon PT</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Além do Formigueiro -->
+                <div class="book-card">
+                    <img src="alem_do_formigueiro.png" alt="Além do Formigueiro" class="book-cover-img">
+                    <div class="book-info">
+                        <div>
+                            <div class="book-category">Essays & Poetry</div>
+                            <h4>Além do Formigueiro</h4>
+                            <p class="lang-en">The poet's truths facing urban haste and collective patterns.</p>
+                            <p class="lang-pt">As verdades do poeta diante da pressa urbana.</p>
+                        </div>
+                        <div class="btn-group">
+                            <a href="https://a.co/d/0eHX3GCr" target="_blank" class="btn">Amazon</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Mauricio Custarella. <span class="lang-en">All rights reserved. | Hosted via</span><span class="lang-pt">Todos os direitos reservados. | Hospedado via</span> <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
+        </footer>
+    </div>
+
+    <script>
+        function toggleLanguage() {
+            const body = document.body;
+            const toggleBtn = document.getElementById('langToggle');
+            const enElements = document.querySelectorAll('.lang-en');
+            const ptElements = document.querySelectorAll('.lang-pt');
+            const dynamicCovers = document.querySelectorAll('.dynamic-cover');
+
+            if (body.getAttribute('data-lang') === 'en') {
+                body.setAttribute('data-lang', 'pt');
+                enElements.forEach(el => el.style.display = 'none');
+                ptElements.forEach(el => el.style.display = 'block');
+                dynamicCovers.forEach(img => {
+                    if (img.dataset.pt) img.src = img.dataset.pt;
+                });
+                toggleBtn.innerText = 'Switch to English';
+                document.documentElement.lang = 'pt-BR';
+            } else {
+                body.setAttribute('data-lang', 'en');
+                ptElements.forEach(el => el.style.display = 'none');
+                enElements.forEach(el => el.style.display = 'block');
+                dynamicCovers.forEach(img => {
+                    if (img.dataset.en) img.src = img.dataset.en;
+                });
+                toggleBtn.innerText = 'PT-BR / English';
+                document.documentElement.lang = 'en';
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll('.lang-pt').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('.lang-en').forEach(el => el.style.display = 'block');
+        });
+    </script>
+
 </body>
 </html>
