@@ -1,324 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mauricio Custarella | Author & Researcher</title>
-    <style>
-        :root {
-            --bg-color: #0b0f19;
-            --card-bg: #131b2e;
-            --text-primary: #f0f6fc;
-            --text-secondary: #8b949e;
-            --accent: #38bdf8;
-            --border: #1e293b;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            line-height: 1.6;
-            padding: 2rem 1rem;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
 
-        .lang-switch {
-            text-align: right;
-            margin-bottom: 1rem;
-        }
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
 
-        .lang-btn {
-            background-color: var(--card-bg);
-            color: var(--accent);
-            border: 1px solid var(--accent);
-            padding: 0.4rem 0.8rem;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.85rem;
-            font-weight: 600;
-            transition: background-color 0.2s, color 0.2s;
-        }
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
 
-        .lang-btn:hover {
-            background-color: var(--accent);
-            color: var(--bg-color);
-        }
-        
-        header {
-            text-align: center;
-            padding: 2rem 0 2rem 0;
-            border-bottom: 1px solid var(--border);
-            margin-bottom: 3rem;
-        }
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+ <base href="/">
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
 
-        .author-photo {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--accent);
-            box-shadow: 0 8px 24px rgba(56, 189, 248, 0.2);
-            margin-bottom: 1.25rem;
-        }
-        
-        header h1 {
-            font-size: 2.8rem;
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.5px;
-            color: #ffffff;
-        }
-        
-        header p.tagline {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        section {
-            margin-bottom: 4rem;
-        }
-        
-        h2 {
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 0.75rem;
-            color: #ffffff;
-        }
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="notam_decoder">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
-        h3.category-title {
-            font-size: 1.3rem;
-            color: var(--accent);
-            margin: 2.5rem 0 1.5rem 0;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-left: 4px solid var(--accent);
-            padding-left: 0.75rem;
-        }
-        
-        .bio-text {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            margin-bottom: 1.2rem;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
-        }
-        
-        .books-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 2rem;
-        }
-        
-        .book-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.2s ease, border-color 0.2s ease;
-        }
-        
-        .book-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent);
-        }
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
 
-        .book-cover-img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .book-info {
-            padding: 1.25rem;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-            justify-content: space-between;
-        }
-
-        .book-category {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            color: var(--accent);
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-        }
-        
-        .book-card h4 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-            line-height: 1.4;
-        }
-        
-        .book-card p {
-            color: var(--text-secondary);
-            font-size: 0.88rem;
-            margin-bottom: 1.25rem;
-        }
-        
-        .btn-group {
-            display: flex;
-            gap: 0.5rem;
-            margin-bottom: 0.4rem;
-        }
-
-        .btn-group:last-child {
-            margin-bottom: 0;
-        }
-
-        .btn {
-            flex: 1;
-            display: block;
-            background-color: transparent;
-            color: var(--accent);
-            border: 1px solid var(--accent);
-            padding: 0.4rem 0.2rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-size: 0.78rem;
-            font-weight: 600;
-            text-align: center;
-            transition: background-color 0.2s, color 0.2s;
-        }
-        
-        .btn:hover {
-            background-color: var(--accent);
-            color: var(--bg-color);
-        }
-
-        .btn-lp {
-            border-color: #10b981;
-            color: #34d399;
-        }
-
-        .btn-lp:hover {
-            background-color: #10b981;
-            color: var(--bg-color);
-        }
-        
-        footer {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border);
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-        
-        footer a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        .lang-pt { display: none; }
-        .lang-en { display: block; }
-    </style>
+  <title>notam_decoder</title>
+  <link rel="manifest" href="manifest.json">
 </head>
-<body data-lang="en">
+<body>
+  <!--
+    You can customize the "flutter_bootstrap.js" script.
+    This is useful to provide a custom configuration to the Flutter loader
+    or to give the user feedback during the initialization process.
 
-    <div class="container">
-        <div class="lang-switch">
-            <button class="lang-btn" id="langToggle" onclick="toggleLanguage()">PT-BR / English</button>
-        </div>
-
-        <div style="text-align: right; margin-bottom: 2rem;">
-            <a href="/notam/index.html" class="btn" style="display: inline-block; width: auto; padding: 0.5rem 1rem;">Aviation Stuff / EFB</a>
-        </div>
-
-        <header>
-            <img src="autor.jpg" alt="Mauricio Custarella" class="author-photo">
-            <h1>Mauricio Custarella</h1>
-            <p class="tagline">
-                <span class="lang-en">Hard Science Fiction Author, Philosophical Essayist & Consciousness Researcher.</span>
-                <span class="lang-pt">Escritor de Hard Science Fiction, Ensaísta Filosófico e Pesquisador da Consciência.</span>
-            </p>
-        </header>
-
-        <section>
-            <h2 class="lang-en">About the Author</h2>
-            <h2 class="lang-pt">Sobre o Autor</h2>
-            
-            <p class="bio-text lang-en">
-                With over four decades dedicated to aviation and critical systems management, Mauricio Custarella's work unites rigorous operational discipline with deep philosophical speculation.
-            </p>
-            <p class="bio-text lang-pt">
-                Com mais de quatro décadas dedicadas à aviação profissional e à gestão de sistemas críticos, o trabalho de Mauricio Custarella une a rigorosa disciplina operacional à especulação filosófica profunda.
-            </p>
-
-            <p class="bio-text lang-en">
-                His works explore the limits of reality, control architectures, the cybernetics of consciousness, and ego sovereignty through immersive hard sci-fi narratives and independent essays published on Amazon KDP and UICLAP.
-            </p>
-            <p class="bio-text lang-pt">
-                Suas obras exploram os limites da realidade, arquiteturas de controle, a cibernética da consciência e a soberania do ego através de narrativas imersivas de hard sci-fi e ensaios independentes publicados na Amazon KDP e UICLAP.
-            </p>
-        </section>
-
-        <section>
-            <h2 class="lang-en">Literary Showcase</h2>
-            <h2 class="lang-pt">Vitrine Literária</h2>
-
-            <!-- BLOCO 1: HARD SCI-FI & SPECULATIVE FICTION -->
-            <h3 class="category-title lang-en">Hard Science Fiction & Speculative Works</h3>
-            <h3 class="category-title lang-pt">Hard Science Fiction & Obras Especulativas</h3>
-            <div class="books-grid">
-                
-                <!-- Caos Real / The Glass Protocol -->
-                <div class="book-card">
-                    <img src="the_glass_protocol.png" alt="Caos Real" class="book-cover-img dynamic-cover" data-en="the_glass_protocol.png" data-pt="caos_real.png">
-                    <div class="book-info">
-                        <div>
-                            <div class="book-category">Hard Sci-Fi</div>
-                            <h4>Caos Real / The Glass Protocol</h4>
-                            <p class="lang-en">Systemic collapse and protocol logic in speculative futures.</p>
-                            <p class="lang-pt">O colapso sistêmico e a lógica de protocolos em futuros especulativos.</p>
-                        </div>
-                        <div>
-                            <div class="btn-group">
-                                <a href="./caosreal/en/" target="_blank" class="btn btn-lp">LP (EN)</a>
-                                <a href="./caosreal/" target="_blank" class="btn btn-lp">LP (PT)</a>
-                            </div>
-                            <div class="btn-group">
-                                <a href="https://a.co/d/061BQxDc" target="_blank" class="btn">Amazon EN</a>
-                                <a href="https://a.co/d/04Pspdpp" target="_blank" class="btn">Amazon PT</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- OS 11 -->
-                <div class="book-card">
-                    <img src="os_11-en.png" alt="OS 11" class="book-cover-img dynamic-cover" data-en="os_11-en.png" data-pt="os_11.png">
-                    <div class="book-info">
-                        <div>
-                            <div class="book-category">Hard Sci-Fi</div>
-                            <h4>OS 11</h4>
-                            <p class="lang-en">The science they erased and the only key that can save us.</p>
-                            <p class="lang-pt">A ciência que eles apagaram e a única chave que pode nos salvar.</p>
-                        </div>
-                        <div>
-                            <div class="btn-group">
-                                <a href="https://mcchelicopter-tech.github.io/os11-landing/" target="_blank" class="btn btn-lp">Landing Page</a>
-                            </div>
-                            <div class="btn-group">
-                                <a href="https://a.co/d/0iuPLjiW" target="_blank" class="btn">Amazon
+    For more details:
+    * https://docs.flutter.dev/platform-integration/web/initialization
+  -->
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
