@@ -26,7 +26,6 @@
 
     <style>
         :root {
-
             --bg-color: #0b0f19;
             --card-bg: #131b2e;
             --text-primary: #f0f6fc;
@@ -74,6 +73,30 @@
         .lang-btn:hover {
             background-color: var(--accent);
             color: var(--bg-color);
+        }
+
+        /* Estilo da Caixa de Contato */
+        .contact-box {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-left: 4px solid #f59e0b;
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            max-width: 400px;
+            margin: 0 auto 1.5rem auto;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .contact-box a {
+            color: #fbbf24;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-box a:hover {
+            text-decoration: underline;
         }
         
         header {
@@ -260,6 +283,12 @@
     <div class="container">
         <div class="lang-switch">
             <button class="lang-btn" id="langToggle" onclick="toggleLanguage()">PT-BR / English</button>
+        </div>
+
+        <!-- Caixa de Contato Rápido -->
+        <div class="contact-box">
+            <span class="lang-en">Direct contact / Inquiries: <a href="mailto:mcchelicopter@gmail.com">Send an Email</a></span>
+            <span class="lang-pt">Contato direto / Parcerias: <a href="mailto:mcchelicopter@gmail.com">Enviar E-mail</a></span>
         </div>
 
         <header>
